@@ -1551,8 +1551,8 @@ class AppDialog(QtGui.QWidget):
             app = sgtk.platform.current_bundle()
             entity = app.context.entity
             shotgun_connection = app.engine.shotgun
-            data = shotgun_connection.find_one("Shot", [["id", "is", entity['id']]], ['sg_zs_alembic_data'])
-            data = json.loads(data['sg_zs_alembic_data'])
+            data = shotgun_connection.find_one("Shot", [["id", "is", entity['id']]], ['sg_mb_alembic_data'])
+            data = json.loads(data['sg_mb_alembic_data'])
             for asset in data:
                 print('ASSET {0}'.format(asset.upper()))
                 for load in data[asset]:
